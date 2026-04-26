@@ -1,0 +1,38 @@
+{
+  "case_id": "onrt-capsize-mc-v0.1",
+  "captured_at": "2026-04-26",
+  "wasm_core_build": "180bd98b",
+
+  "vessel": {
+    "name": "ONR Tumblehome (DTMB 5613)",
+    "imo_msc1_circ1627_reference": true,
+    "panels": 841,
+    "loading": "design displacement"
+  },
+
+  "sea_state": {
+    "model": "JONSWAP",
+    "Hs_m": 4.0,
+    "Tp_s": 9.0,
+    "gamma": 3.3,
+    "heading_deg": 90,
+    "ship_speed_kn": 0
+  },
+
+  "monte_carlo": {
+    "n_realisations": 30,
+    "n_timesteps_per_realisation": 1200,
+    "dof": 3,
+    "roll_damping_model": "linear_c44",
+    "rng": "mersenne_twister_64",
+    "rng_seed_hex": "0x4D436"
+  },
+
+  "hardware_reference": {
+    "year": 2023,
+    "tier": "mid-range laptop",
+    "webgpu_adapter": "integrated_or_discrete",
+    "ram_gb_min": 16,
+    "browser": "Chrome 128+ or Firefox 130+ with WebGPU enabled"
+  }
+}

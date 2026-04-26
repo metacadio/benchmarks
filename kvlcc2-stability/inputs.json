@@ -1,0 +1,31 @@
+{
+  "case_id": "kvlcc2-stability-v0.1",
+  "captured_at": "2026-04-26",
+  "wasm_core_build": "180bd98b",
+
+  "vessel": {
+    "name": "KVLCC2 (KRISO Very Large Crude Carrier 2)",
+    "Lbp_m": 320.0,
+    "B_m": 58.0,
+    "D_m": 30.0,
+    "T_design_m": 20.8,
+    "Cb_design": 0.8098,
+    "displacement_tonnes_design": 312622,
+    "hull_offsets_source": "KRISO public release; ITTC 2010/2015/2020 workshops"
+  },
+
+  "loading": {
+    "draft_m": 20.8,
+    "trim_m": 0.0,
+    "KG_m": 18.56,
+    "free_surface_correction_m": 0.0
+  },
+
+  "heel_angles_deg": [5, 10, 15, 20, 30, 40, 60],
+
+  "method": {
+    "module": "MetaCAD stability/cross-curves",
+    "interpolation": "linear in cos(phi) on KN tables",
+    "GZ_formula": "KN(phi) - KG * sin(phi)"
+  }
+}

@@ -1,0 +1,62 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  schema-check:
+    name: inputs.json schema + expected.md format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate every inputs.json is valid JSON
+        run: |
+          set -e
+          for f in $(find . -name 'inputs.json' -not -path './.github/*'); do
+            echo "Checking $f"
+            python -c "import json; json.load(open('$f'))"
+          done
+
+      - name: Verify each case directory has README + inputs.json + expected.md
+        run: |
+          set -e
+          for d in $(find . -maxdepth 1 -type d -not -name '.*' -not -name '.'); do
+            if [ "$d" = "./.github" ]; then continue; fi
+            for required in README.md inputs.json expected.md; do
+              if [ ! -f "$d/$required" ]; then
+                echo "MISSING: $d/$required"
+                exit 1
+              fi
+            done
+            echo "OK: $d"
+          done
+
+      - name: Check captured_at + wasm_core_build present in every inputs.json
+        run: |
+          set -e
+          for f in $(find . -name 'inputs.json' -not -path './.github/*'); do
+            python -c "
+          import json, sys
+          d = json.load(open('$f'))
+          for k in ['case_id', 'captured_at', 'wasm_core_build']:
+              if k not in d:
+                  print('MISSING', '$f', k); sys.exit(1)
+          print('OK', '$f')
+          "
+          done
+
+      - name: Lint markdown (no broken links to local files)
+        run: |
+          set -e
+          # Cheap heuristic: every inputs.json link in README should resolve
+          for d in $(find . -maxdepth 1 -type d -not -name '.*' -not -name '.'); do
+            if [ "$d" = "./.github" ]; then continue; fi
+            if grep -q '`inputs.json`' "$d/README.md" && [ ! -f "$d/inputs.json" ]; then
+              echo "Broken link in $d/README.md"
+              exit 1
+            fi
+          done

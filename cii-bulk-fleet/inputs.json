@@ -1,0 +1,46 @@
+{
+  "case_id": "cii-bulk-fleet-v0.1",
+  "captured_at": "2026-04-26",
+  "wasm_core_build": "180bd98b",
+
+  "fleet_generator": {
+    "n_vessels": 1000,
+    "rng_seed_hex": "0xC11",
+    "ship_type_distribution": {
+      "bulk": 0.60,
+      "container": 0.10,
+      "tanker": 0.10,
+      "gas": 0.04,
+      "lng": 0.04,
+      "general": 0.06,
+      "ro-ro": 0.02,
+      "ro-pax": 0.02,
+      "cruise": 0.01,
+      "ro-ro-vehicle": 0.01
+    },
+    "dwt_range_tonnes": [5000, 400000],
+    "dwt_distribution": "log-uniform",
+    "annual_distance_nm_range": [40000, 100000],
+    "annual_distance_distribution": "uniform",
+    "fuel_mix_default": {
+      "HFO": 0.60,
+      "VLSFO": 0.30,
+      "MGO": 0.05,
+      "LNG": 0.05
+    }
+  },
+
+  "regulatory_framework": {
+    "year": 2026,
+    "imo_mepc_references": ["MEPC.336(76)", "MEPC.337(76)", "MEPC.354(78)", "MEPC.400(82)"],
+    "Z_trajectory_baseline": "2019",
+    "Z_trajectory_year_2026_reduction_pct": 7.0
+  },
+
+  "hardware_reference": {
+    "year": 2023,
+    "tier": "mid-range laptop",
+    "wall_clock_target_ms": 800,
+    "wall_clock_ceiling_ms": 1500
+  }
+}

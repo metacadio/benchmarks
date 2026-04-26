@@ -5,7 +5,7 @@ This repository contains **fixtures and expected-output manifests only** — no 
 If you discover a security issue in the **closed-source MetaCAD WASM core** that produces the numbers verified here:
 
 - **Email** — mmotorin@gmail.com — with subject `[SECURITY] MetaCAD core <short title>`
-- **Telegram** — [@metacad_support](https://t.me/metacad_support) — for a faster response
+- **Telegram** — [@fxadmins](https://t.me/fxadmins) — for a faster response
 - Please **do not open a public issue** for security-sensitive reports
 
 We commit to:

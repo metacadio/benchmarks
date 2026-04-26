@@ -48,6 +48,6 @@ If a run on your machine produces numbers outside the expected envelope, please 
 ## Contact
 
 - **Email** — mmotorin@gmail.com
-- **Telegram** — [@metacad_support](https://t.me/metacad_support)
+- **Telegram** — [@fxadmins](https://t.me/fxadmins)
 - **Live product** — [metacad.io](https://metacad.io)
 - **Founder** — Dmitriy Motorin · [linkedin.com/in/dmotorin](https://www.linkedin.com/in/dmotorin/)

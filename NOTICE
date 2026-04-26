@@ -1,0 +1,17 @@
+MetaCAD Benchmarks
+Copyright 2026 Dmitriy Motorin (MetaCAD)
+
+This product includes fixtures and expected-output manifests
+licensed under the Apache License, Version 2.0 (see LICENSE).
+
+The closed-source MetaCAD WASM core that produces the numbers
+verified here is NOT covered by this Apache-2.0 license. It is
+proprietary software distributed under a separate commercial
+license at https://metacad.io/terms.
+
+Reference data sources:
+- IMO MEPC.336(76), .337(76), .354(78), .400(82) — CII framework
+- IMO MSC.1/Circ.1627 — Second-Generation Intact Stability
+- KRISO Very Large Crude Carrier 2 (KVLCC2) — public hull offsets,
+  ITTC ship-CFD workshops 2010, 2015, 2020
+- ONR Tumblehome (DTMB Model 5613) — public model-test data

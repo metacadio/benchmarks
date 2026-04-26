@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Bug in the live metacad.io product
+    url: https://metacad.io
+    about: This repo is fixtures only — for product bugs, use the contact form on metacad.io or email mmotorin@gmail.com
+  - name: Security report (closed-source core)
+    url: https://github.com/metacadio/benchmarks/blob/main/SECURITY.md
+    about: Security issues in the closed-source WASM core go via private email, not GitHub Issues
